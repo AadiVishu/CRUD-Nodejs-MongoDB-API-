@@ -1,0 +1,36 @@
+<div class="row container">
+<h6>
+    <a class="text-decoration-none text-dark btn btn-light" href="/employee"><li class="fa fa-plus"></li> Create New</a>
+</h6>
+<h5 class=" ml-5 text-center">Employee List:</h5>
+</div>
+<hr>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+             <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr class="text-light">
+                <td>{{this.fullName}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.city}}</td>
+                <td>
+                    <a href="/employee/{{this._id}}">
+                        <i class="fa fa-pencil m-1 text-primary" aria-hidden="true"></i>
+                    </a>
+                    <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure want to delete this items? :( ')">
+                        <i class="fa fa-trash m-1 text-light" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>

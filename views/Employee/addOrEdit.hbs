@@ -1,0 +1,37 @@
+ {{!-- for the handling the error --}}
+<div class="alert-warning">{{error}}</div>
+
+<h5 class="text-center text-light">{{viewTitle}}</h5>
+<hr>
+  <form method="POST" action="/employee/saveEmployee" autocomplete="off">
+  <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+      <label><b>FullName:</b></label>
+      <input class="form-control" type="text" name="fullName" value="{{employee.fullName}}" placeholder="Enter name..." >
+      <div class="text-warning">{{employee.fullNameError}}</div>
+    </div>
+    <div class="form-group">
+      <label><b>Email:</b></label>
+      <input class="form-control" type="text" name="email" value="{{employee.email}}" placeholder="Enter email...">
+      <div class="text-warning">{{employee.emailError}}</div>
+    </div>
+    <div class="form-group">
+      <label><b>Mobile:</b></label>
+      <input class="form-control" type="number" name="mobile" value="{{employee.mobile}}" placeholder="Enter mobile...">
+    </div>
+    <div class="form-group">
+      <label><b>City:</b></label>
+      <input class="form-control" type="text" name="city" value="{{employee.city}}" placeholder="Enter city...">
+    </div><br>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-warning">
+            <i class='fas fa-database'></i>
+            Submit
+        </button>
+        <a href="/employee/list" class="btn btn-info">
+            <i class="fa fa-list-alt"></i>
+            View All
+        </a>
+    </div>
+  </form>
